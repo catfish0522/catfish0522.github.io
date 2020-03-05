@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>markdown basics | Catfish</title>
+<meta name="description" content="You either die a hero or you live long enough to see yourself become the villain.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://catfish0522.github.io/favicon.ico?v=1583371630544">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://catfish0522.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126738270-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126738270-2');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://catfish0522.github.io">
+        <img class="avatar" src="https://catfish0522.github.io/images/avatar.png?v=1583371630544" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://catfish0522.github.io">
+        <h1 class="site-title">Catfish</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">markdown basics</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-03-05</span>
+            
+          </div>
+          <div class="post-content">
+            <p>Markdown，就是一种易于编写的普通文本，只不过加入了可渲染文本的【标记】而已</p>
+<!-- more -->
+<h2 id="标题">标题</h2>
+<p>Markdown 支持6种级别的标题，对应 HTML 标签 <code>&lt;h1&gt;</code>到<code>&lt;h6&gt;</code></p>
+<pre><code class="language-markdown"># 一级标题(&lt;h1&gt;)
+## 二级标题(&lt;h2&gt;)
+### 三级标题(&lt;h3&gt;)
+#### 四级标题(&lt;h4&gt;)
+##### 五级标题(&lt;h5&gt;)
+###### 六级标题(&lt;h6&gt;)
+</code></pre>
+<p>除此之外，Markdown 还支持<code>Setext-style</code>形式标题，使用下划线控制文本大小</p>
+<pre><code class="language-markdown">这是一级标题
+===
+这是二级标题
+---
+</code></pre>
+<p><code>Setext-style</code>支持的文字大小级别有限：仅一级标题和二级标题</p>
+<p>这种方式在 Github 的一些开源项目上面比较常见</p>
+<h2 id="区块引用">区块引用</h2>
+<p>希望对某段文字进行强调，或者这段文字来自某名人和网站时</p>
+<p>Markdown 提供了一个特殊符号 <code>&gt;</code> 用于段首进行强调，<strong>文字与 <code>&gt;</code> 之间有空格</strong></p>
+<pre><code class="language-markdown">&gt; 这是一段引文
+</code></pre>
+<blockquote>
+<p>这是一段引文</p>
+</blockquote>
+<h2 id="超链接">超链接</h2>
+<p>Markdown 的超链接也是简单，格式：<code>[链接说明](链接地址)</code></p>
+<h2 id="插入图片">插入图片</h2>
+<p>格式与超链接差不多，只是开头以 <code>!</code>用来区分，格式：<code>![图片说明](图片地址)</code></p>
+<h2 id="列表排列">列表排列</h2>
+<p>有序列表用数字加 <code>.</code>表示，如：<code>1.</code>，<strong>文字与 <code>1.</code> 之间有空格</strong></p>
+<p>对于有序列表，Markdown 不关心编号是多少，只要格式正确，解析器自动编排</p>
+<p>下面三个项目编号都是1，但最终显示为1、2、3</p>
+<pre><code class="language-markdown">1. 我是1号
+1. 我是2号
+1. 我是3号
+</code></pre>
+<ol>
+<li>我是1号</li>
+<li>我是2号</li>
+<li>我是3号</li>
+</ol>
+<p>Markdown 还支持层级列表，要在列表中添加子列表</p>
+<p>只需要保证子列表前加 <code>tab</code> 即可，<code>tab</code> 可用空格代替</p>
+<p>但要注意，不同的Markdown解析器空格数可能不同</p>
+<pre><code class="language-markdown">1. 我是1号
+	1. 我是1号子列表1号
+	1. 我是1号子列表2号
+1. 我是2号
+	1. 我是2号子列表1号
+	1. 我是2号子列表2号
+</code></pre>
+<ol>
+<li>我是1号
+<ol>
+<li>我是1号子列表1号</li>
+<li>我是1号子列表2号</li>
+</ol>
+</li>
+<li>我是2号
+<ol>
+<li>我是2号子列表1号</li>
+<li>我是2号子列表2号</li>
+</ol>
+</li>
+</ol>
+<p>无序列表使用方法跟有序列表相同，子列表也一样适用</p>
+<p>说些不同的：无序列表用<code>*</code>号、<code>+</code>号或<code>-</code>号表示都可以，<strong>文字与 <code>-</code> 之间有空格</strong></p>
+<pre><code class="language-markdown">- 我是无序1号
+- 我是无序2号
+</code></pre>
+<ul>
+<li>我是无序1号</li>
+<li>我是无序2号</li>
+</ul>
+<h2 id="分割线">分割线</h2>
+<p>有时候，为了排版美观，可能会加入分隔线。Markdown加入分隔线非常简单，不小于三个减号即可</p>
+<pre><code class="language-markdown">---
+</code></pre>
+<hr>
+<h2 id="强调字体">强调字体</h2>
+<pre><code class="language-markdown">*我是斜体*	_我还是斜体_
+
+**我是粗体** 	__我还是粗体__
+
+***我是粗体但我歪了***
+
+~~我被删除了~~
+</code></pre>
+<p><em>我是斜体</em>	<em>我还是斜体</em></p>
+<p><strong>我是粗体</strong> 	<strong>我还是粗体</strong></p>
+<p><em><strong>我是粗体但我歪了</strong></em></p>
+<p><s>我被删除了</s></p>
+<h2 id="区分代码">区分代码</h2>
+<p>用一个反引号包裹的代码以行内样式显示</p>
+<p>如：<code>print('hello')</code>，跟描述文本形成一行</p>
+<p>三个反引号引起来的代码以块样式显示：</p>
+<pre><code class="language-python">def hello_world():
+    print('hello world')
+
+hello_world()
+</code></pre>
+<p>请注意，<strong>反引号在横排数字键盘<code>1</code>前面</strong></p>
+<p>除此之外，你还可以通过三个反引号加语言名，并指定编程语言，让渲染出来的代码样式更漂亮</p>
+<h2 id="表格">表格</h2>
+<p>复杂的表格，简单的渲染</p>
+<pre><code class="language-markdown">| |早饭|午饭|晚饭|
+|:---:|---|---|---|
+|时间|9:00|12:00|18:00|
+|原则|吃好|吃饱|吃少|
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th>早饭</th>
+<th>午饭</th>
+<th>晚饭</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">时间</td>
+<td>9:00</td>
+<td>12:00</td>
+<td>18:00</td>
+</tr>
+<tr>
+<td style="text-align:center">原则</td>
+<td>吃好</td>
+<td>吃饱</td>
+<td>吃少</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>竖线<code>|</code>分隔单元格，减号<code>-</code>分隔表头和内容</li>
+<li>竖线<code>|</code>之间的多余空格会被忽略，不影响布局排版</li>
+<li>对齐格式
+<ul>
+<li>右对齐：<code>---:</code></li>
+<li>左对齐：<code>:---</code></li>
+<li>居中对齐：<code>:---:</code></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://catfish0522.github.io/post/vsc-netease-music/">
+              <h3 class="post-title">
+                下一篇：vsc netease music
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">You either die a hero or you live long enough to see yourself become the villain.</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://catfish0522.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>markdown advanced | Catfish</title>
+<meta name="description" content="You either die a hero or you live long enough to see yourself become the villain.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://catfish0522.github.io/favicon.ico?v=1583371630544">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://catfish0522.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126738270-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126738270-2');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://catfish0522.github.io">
+        <img class="avatar" src="https://catfish0522.github.io/images/avatar.png?v=1583371630544" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://catfish0522.github.io">
+        <h1 class="site-title">Catfish</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">markdown advanced</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-03-05</span>
+            
+          </div>
+          <div class="post-content">
+            <p>Markdown 基础语法写出来的文档不够炫？</p>
+<!-- more -->
+<h2 id="文本样式">文本样式</h2>
+<h3 id="更改字体">更改字体</h3>
+<pre><code class="language-markdown">&lt;font face=&quot;黑体&quot;&gt;我是黑体字&lt;/font&gt;
+</code></pre>
+<h3 id="更改颜色">更改颜色</h3>
+<pre><code class="language-markdown">&lt;font color=red&gt;我是红色&lt;/font&gt;
+&lt;font color=#008000&gt;我是绿色&lt;/font&gt;
+&lt;font color=Blue&gt;我是蓝色&lt;/font&gt;
+</code></pre>
+<h3 id="更改大小">更改大小</h3>
+<pre><code class="language-markdown">&lt;font size=5&gt;我是尺寸&lt;/font&gt;
+</code></pre>
+<h3 id="为文字添加背景色">为文字添加背景色</h3>
+<p>由于 style 标签和标签的 style 属性不被支持</p>
+<p>所以只能是借助 table，tr，td 等表格标签的 <code>bgcolor</code> 属性来实现背景色</p>
+<pre><code class="language-markdown">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td bgcolor=#2f2f2f&gt;背景色&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<h3 id="文字对齐">文字对齐</h3>
+<ul>
+<li>居中：<code>&lt;center&gt;居中&lt;/center&gt;</code></li>
+<li>左对齐：<code>&lt;p align=&quot;left&quot;&gt;左对齐&lt;/p&gt;</code></li>
+<li>右对齐：<code>&lt;p align=&quot;right&quot;&gt;右对齐&lt;/p&gt;</code></li>
+</ul>
+<h3 id="文字加入上下标">文字加入上下标</h3>
+<p>使用 HTML 中的上标标签 <code>&lt;sup&gt;&lt;/sup&gt;</code> 和下标标签 <code>&lt;sub&gt;&lt;/sub&gt;</code></p>
+<pre><code class="language-markdown">我&lt;sup&gt;真的&lt;/sup&gt;感谢你啊
+H&lt;sub&gt;2&lt;/sub&gt;O
+</code></pre>
+<h2 id="latex-公式">LaTeX 公式</h2>
+<p>Markdown 支持 LaTeX 就是一个大优势，真的强</p>
+<p>一个 $ 闭合表示行内公式，两个 $$ 闭合表示行间公式</p>
+<p>举个栗子，写个分数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn><mi>a</mi></mrow><mrow><mn>2</mn><mi>b</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1a}{2b}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathdefault mtight">b</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mathdefault mtight">a</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>：</p>
+<pre><code class="language-markdown">$\frac{1a}{2b}$
+
+$$
+\frac{1a}{2b}
+$$
+</code></pre>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn><mi>a</mi></mrow><mrow><mn>2</mn><mi>b</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1a}{2b}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.00744em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mord mathdefault">b</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord mathdefault">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<h2 id="mermaid">Mermaid</h2>
+<p>美人鱼？？？</p>
+<p>别想歪了，只是编辑器 Typora 自带的画流程图扩展</p>
+<p>在用 Typora 编写 Markdown 文本时，插入这样一个代码块：</p>
+<pre><code class="language-markdown">    ```mermaid
+        ......流程图代码......
+</code></pre>
+<pre><code>### 起始代码
+
+写流程图时，代码以 `graph [布局方向]` 开头，
+
+​```mermaid
+graph TB
+  ...
+  ...
+</code></pre>
+<p>总的布局方向：</p>
+<ul>
+<li>TB：Top to Bottom，上到下</li>
+<li>BT：Bottom to Top，下到上</li>
+<li>LR：Left to Right，左到右</li>
+<li>RL：Right to Left，右到左</li>
+</ul>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://catfish0522.github.io/post/markdown-basics/">
+              <h3 class="post-title">
+                下一篇：markdown basics
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">You either die a hero or you live long enough to see yourself become the villain.</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://catfish0522.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

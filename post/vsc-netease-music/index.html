@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>vsc netease music | Catfish</title>
+<meta name="description" content="You either die a hero or you live long enough to see yourself become the villain.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://catfish0522.github.io/favicon.ico?v=1583371630544">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://catfish0522.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126738270-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126738270-2');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://catfish0522.github.io">
+        <img class="avatar" src="https://catfish0522.github.io/images/avatar.png?v=1583371630544" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://catfish0522.github.io">
+        <h1 class="site-title">Catfish</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">vsc netease music</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-03-05</span>
+            
+          </div>
+          <div class="post-content">
+            <blockquote>
+<p>使用 <a href="https://code.visualstudio.com/api/extension-guides/webview">Webview</a> 实现，通过 <a href="https://developer.mozilla.org/en-USdocs/Web/API/HTMLMediaElement">HTMLAudioElement</a> 播放音乐，不依赖<a href="https://github.ocm/shime/play-sound#options">命令行播放器</a>，<strong>灵感来自 <a href="https://marketplace.visualstudio.com/items?itemName=kangping.video">Kangping/video</a></strong></p>
+</blockquote>
+<!-- more -->
+<h3 id="要求">要求</h3>
+<p><a href="https://stackoverflow.com/questions/48321919/show-html5-video-on-previewhtml-command-in-vscode-extension/51735036#51735036">VS Code 使用的 Electron 版本不包含 ffmpeg</a>，需替换自带的 ffmpeg 动态链接库才能正常播放 (每次更新 VS Code 都需重新替换)</p>
+<p><strong>VS Code for Windows 1.31.0 - 1.35.1 不需替换，1.36.0 后无此待遇</strong></p>
+<h3 id="自动更换">自动更换</h3>
+<p>使用 Python 脚本替换 (使用<a href="https://npm.taobao.org/mirrors/electron/">淘宝 Electron 镜像</a>，兼容 Python 2/3，绝大部分发行版自带环境)</p>
+<p><strong>默认安装位置下 Linux 和 Windows 需要以管理员身份运行，macOS 不需要</strong></p>
+<p>作者给出的链接访问有点慢，所以我把 <a href="/images/VSC-Netease-Music/raw.py">raw文件</a> 保存下来了，运行下就行了</p>
+<pre><code class="language-shell">$ python raw.py
+</code></pre>
+<p><strong>若提示错误111，则是访问慢的原因，多次重试或者等待一下再重试</strong></p>
+<p>如果 VS Code 使用默认配置安装，脚本会自动寻找并替换，若自定义了安装位置，请自行修改 <a href="https://gist.github.com/nondanee/f157bbbccecfe29e48d87273cd02e213#file-helper-py-L20">installation</a></p>
+<h3 id="插件功能">插件功能</h3>
+<ul>
+<li>发现音乐 (歌单 / 新歌 / 排行榜)</li>
+<li>搜索 (单曲 / 歌手 / 专辑 / 歌单)</li>
+<li>用户登录 (手机号 / 邮箱)</li>
+<li>用户收藏 (歌单 / 歌手 / 专辑)</li>
+<li>每日歌曲推荐 / 推荐歌单 / 私人 FM</li>
+<li>喜欢音乐 / 收藏音乐</li>
+<li>播放模式切换 / 音量调节</li>
+<li>逐行歌词</li>
+<li>热门评论</li>
+<li>快捷键支持</li>
+<li>听歌记录 (不确定有效)</li>
+<li>无海外限制</li>
+</ul>
+<h3 id="运行步骤">运行步骤</h3>
+<p>确定 ffmpeg 更换之后</p>
+<p>在vscode中按<code>F1</code>或<code>Ctrl+Shift+P</code>,输入框中输入<code>neteasemusic</code>，命令提示只有一个<code>start</code></p>
+<figure data-type="image" tabindex="1"><img src="/images/VSC-Netease-Music/step1.png" alt="step1" loading="lazy"></figure>
+<p>当有如下图提示时</p>
+<figure data-type="image" tabindex="2"><img src="/images/VSC-Netease-Music/step2.png" alt="step2" loading="lazy"></figure>
+<p>再按<code>F1</code>或<code>Ctrl+Shift+P</code>，输入框中输入<code>neteasemusic</code>，这次的命令提示就多了，然后就可以真正使用这个插件啦</p>
+<figure data-type="image" tabindex="3"><img src="/images/VSC-Netease-Music/step3.png" alt="step3" loading="lazy"></figure>
+<h3 id="更多报错">更多报错</h3>
+<p>当有其它的问题时，请提交 Issues 给作者，也可以访问 <a href="https://github.com/nondanee/vsc-netease-music/issues?q=is%3Aissue+is%3Aopen">vsc-netease-music/issues</a> 寻找是否有相关自己的问题</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://catfish0522.github.io/post/about/">
+              <h3 class="post-title">
+                下一篇：关于
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">You either die a hero or you live long enough to see yourself become the villain.</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://catfish0522.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
