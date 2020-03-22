@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>关于 | Catfish</title>
+<title>开始你的 manim | Catfish</title>
 <meta name="description" content="You either die a hero or you live long enough to see yourself become the villain.">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -89,32 +89,77 @@
       <div class="content-container">
         <div class="post-detail">
           
-          <h2 class="post-title">关于</h2>
+            <div class="feature-container" style="background-image: url('https://github.com/3b1b/manim/blob/master/logo/cropped.png')">
+            </div>
+          
+          <h2 class="post-title">开始你的 manim</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2019-01-25</span>
+            <span><i class="icon-calendar-outline"></i> 2020-03-20</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://catfish0522.github.io/tag/hFqLJ5x5g/">
+                    manim
+                    
+                  </a>
+                
+              </span>
             
           </div>
           <div class="post-content">
-            <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
+            <p>尝试使用 Python 做数据分析，那一个好的“PPT”动画绝对少不了。</p>
 <!-- more -->
-<h2 id="关于本站">🏠 关于本站</h2>
-<p>catfish blog</p>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<p>catfish</p>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
-<p>catfish0522@163.com</p>
+<h2 id="manim-是什么">manim 是什么</h2>
+<blockquote>
+<p>manim 是一个基于 Python 的数学动画制作引擎（当然不止于数学）。</p>
+</blockquote>
+<p>详细信息可到 <a href="https://github.com/3b1b/manim">3b1b/manim</a> 查看。</p>
+<h2 id="环境配置">环境配置</h2>
+<p>个人用的是 <a href="https://www.archlinux.org/">Arch Linux</a> 系统，其他系统请自行百度或404。</p>
+<p><code>README.md</code> 中推荐 Python3.7，不推荐直接 <code>pip install manimlib</code>，存放在 <a href="https://pypi.org/project/manimlib/">pypi</a> 中的版本过旧。（可以自行跟 <a href="https://github.com/3b1b/manim">github</a> 上的对比一下）</p>
+<p>还要求有 <code>cairo</code>，<code>ffmpeg</code>，<code>sox</code>，<code>latex</code>。（如果需要用 <code>latex</code>则可选，<s>肯定需要啊</s>）</p>
+<pre><code class="language-bash">$ yay ffmpeg
+$ yay sox
+</code></pre>
+<p><code>latex</code> 分发套装，我推荐 texlive full 版。<br>
+安装时会提示需要默认安装其他的，默认即可。</p>
+<pre><code class="language-bash">$ sudo pacman -S texlive-most texlive-lang
+$ yay tllocalmgr
+</code></pre>
+<h3 id="检验-texlive-是否安装成功">检验 texlive 是否安装成功</h3>
+<p>在终端中输入以下命令，若有相关的版本信息显示，说明安装成功。</p>
+<pre><code class="language-bash">$ tex -v
+$ latex -v
+$ xelatex -v
+</code></pre>
+<h3 id="git-clone">git clone</h3>
+<p>最新的库没有过多的 bug，调用时更直接，查询类的用法也简单。</p>
+<pre><code class="language-git">$ git clone https://github.com/3b1b/manim.git
+</code></pre>
+<h3 id="安装-manim-所需的-python-库">安装 manim 所需的 Python 库</h3>
+<pre><code class="language-bash">$ cd manim
+$ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre>
+<h3 id="检验环境是否配置成功">检验环境是否配置成功</h3>
+<p>到这一步也离成功更进一步了，不成功渲染的大多都是 texlive 没安装好，或者不是 full 版；<br>
+更多的奇葩错误也只在 Windows 系统中才有。</p>
+<p>运行 manim，渲染一个模板文件下的5个类。（每次只能选择一个类来渲染，所以需要运行5次）</p>
+<pre><code class="language-bash">python manim.py example_scenes.py -pl
+</code></pre>
+<p>都成功？那么祝贺你，刚刚完成了 manim 的环境配置。</p>
+<h2 id="题外话">题外话</h2>
+<p>学习 manim 不是一件简单的事，需要啃源码的日子很长，所以建议先好好学习 Python。<br>
+至于 latex，简单的看下<a href="https://sikouhjw.gitee.io/2020/03/08/2020-03-08-Learn-LaTeX/">入门书籍</a>就好了</p>
 
           </div>
         </div>
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://catfish0522.github.io/post/hello-gridea/">
+            <a class="purple-link" href="https://catfish0522.github.io/post/markdown-advanced/">
               <h3 class="post-title">
-                下一篇：Hello Gridea
+                下一篇：markdown advanced
               </h3>
             </a>
           </div>
